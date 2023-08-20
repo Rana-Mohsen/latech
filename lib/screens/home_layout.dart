@@ -1,6 +1,6 @@
-import 'package:final_pro/screens/Home_screen.dart';
+import 'package:final_pro/screens/home.dart';
 import 'package:final_pro/screens/app_info.dart';
-import 'package:final_pro/screens/category_screen.dart';
+import 'package:final_pro/screens/category.dart';
 import 'package:final_pro/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -23,6 +23,8 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Color(0xfffdfeff),
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
         type: BottomNavigationBarType.fixed,
