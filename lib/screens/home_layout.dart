@@ -2,6 +2,7 @@ import 'package:final_pro/screens/home.dart';
 import 'package:final_pro/screens/app_info.dart';
 import 'package:final_pro/screens/category.dart';
 import 'package:final_pro/screens/profile.dart';
+import 'package:final_pro/screens/team.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,7 +19,7 @@ class _HomeLayoutState extends State<HomeLayout> {
     HomeScreen(),
     CategoryScreen(),
     ProfileScreen(),
-    AppinfoScreen()
+    TeamPage()
   ];
   @override
   Widget build(BuildContext context) {
