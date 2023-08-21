@@ -27,9 +27,7 @@ class _ProfileState extends State<ProfileScreen> {
             Container(
               width: 150,
               height: 150,
-              child: Image.network(
-                'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-              ),
+              child: Image.asset('assets/images/person.png',),
             ),
             const SizedBox(
               height: 30,
