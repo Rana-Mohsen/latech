@@ -27,6 +27,16 @@ class TeamPage extends StatelessWidget {
           "https://www.facebook.com/profile.php?id=100002546439630",
     ),
     TeamMember(
+      name: "Malak Ali",
+      role: "Member",
+      bio: "Flutter developer.",
+      imageUrl: "assets/images/d.jpeg",
+      linkedinUrl:
+      "https://www.linkedin.com/in/malak-elngar-20555b210",
+      facebookUrl:
+      "https://www.facebook.com/profile.php?id=100009459053499&mibextid=D4KYlr",
+    ),
+    TeamMember(
       name: "Nada Adel",
       role: "Member",
       bio: "Flutter developer.",
@@ -36,16 +46,7 @@ class TeamPage extends StatelessWidget {
       facebookUrl:
           "https://www.facebook.com/profile.php?id=100012372481567&mibextid=LQQJ4d",
     ),
-    TeamMember(
-      name: "Malak Ali",
-      role: "Member",
-      bio: "Flutter developer.",
-      imageUrl: "assets/images/d.jpeg",
-      linkedinUrl:
-          "https://www.linkedin.com/in/malak-elngar-20555b210",
-      facebookUrl:
-          "https://www.facebook.com/profile.php?id=100009459053499&mibextid=D4KYlr",
-    ),
+
     // Add more team members here
   ];
 

@@ -1,4 +1,3 @@
-import 'package:final_pro/screens/add.dart';
 import 'package:final_pro/screens/home_layout.dart';
 import 'package:final_pro/screens/login_screen/Login_Screen.dart';
 import 'package:final_pro/screens/splash_screen/splash_screen_1.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 250, 253, 255),
         useMaterial3: true,
       ),
-      home:  const AddItem(),
+      home:  const SplashScreen(),
     );
   }
 }
