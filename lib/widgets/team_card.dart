@@ -11,11 +11,11 @@ class TeamMemberCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       surfaceTintColor: Colors.white,
-      color: Color(0xffe0ecf8),
+      color: const Color(0xffe0ecf8),
       elevation: 4,
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -23,32 +23,32 @@ class TeamMemberCard extends StatelessWidget {
               radius: 40,
               backgroundImage: AssetImage(member.imageUrl),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               member.name,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Color(0xff0a1034)),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Color(0xff0a1034)),
             ),
             Text(
               member.role,
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: 10),
             Text(
               member.bio,
-              style: TextStyle(fontSize: 16,color: Color(0xff0a1034)),
+              style: const TextStyle(fontSize: 16,color: Color(0xff0a1034)),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                  icon: Icon(Icons.person,color: Color(0xff0a1034),),
+                  icon: const Icon(Icons.person,color: Color(0xff0a1034),),
                   onPressed: () async {
                     await _launchUrl(member.getLinkedin());
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.facebook,color: Color(0xff0a1034),),
+                  icon: const Icon(Icons.facebook,color: Color(0xff0a1034),),
                   onPressed: () async {
                     await _launchUrl(member.getFacebook());
                   },

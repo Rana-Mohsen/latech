@@ -10,7 +10,7 @@ class TeamPage extends StatelessWidget {
       name: "SalahEldin Fikri",
       role: "Team Leader",
       bio: "Malware analyzer.",
-      imageUrl: "assets/images/b.jpeg",
+      imageUrl: "assets/images/a.png",
       linkedinUrl:
           "https://w...content-available-to-author-only...n.com/in/salah-eldin-fikri-1ab233218/",
       facebookUrl:
@@ -53,7 +53,7 @@ class TeamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Team Members'),
+        title: const Text('Team Members'),
         surfaceTintColor: Colors.transparent,
       ),
       body: ListView.builder(
