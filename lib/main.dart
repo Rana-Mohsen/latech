@@ -1,4 +1,6 @@
 import 'package:final_pro/screens/home_layout.dart';
+import 'package:final_pro/screens/login_screen/Login_Screen.dart';
+import 'package:final_pro/screens/splash_screen/splash_screen_1.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -20,10 +22,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromARGB(255, 250, 253, 255),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 250, 253, 255),
         useMaterial3: true,
       ),
-      home: const HomeLayout(),
+      home:  const SplashScreen(),
     );
   }
 }
