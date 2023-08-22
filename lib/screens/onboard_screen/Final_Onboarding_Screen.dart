@@ -1,4 +1,4 @@
-import 'package:final_pro/screens/components/Constant.dart';
+import 'package:final_pro/components/constant.dart';
 import 'package:final_pro/screens/login_screen/Login_Screen.dart';
 import 'package:final_pro/screens/register_screen/Register_Screen.dart';
 import 'package:flutter/material.dart';

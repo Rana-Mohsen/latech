@@ -1,6 +1,6 @@
 
 import 'dart:async';
-import 'package:final_pro/screens/components/Constant.dart';
+import 'package:final_pro/components/constant.dart';
 import 'package:final_pro/screens/onboard_screen/Final_Onboarding_Screen.dart';
 import 'package:final_pro/screens/onboard_screen/onboard_content/onboarding_contents.dart';
 import 'package:final_pro/screens/onboard_screen/size/size_config.dart';

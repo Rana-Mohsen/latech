@@ -10,7 +10,7 @@ class TeamPage extends StatelessWidget {
       name: "SalahEldin Fikri",
       role: "Team Leader",
       bio: "Malware analyzer.",
-      imageUrl: "assets/images/a.png",
+      imageUrl: "assets/images/a.jpeg",
       linkedinUrl:
           "https://w...content-available-to-author-only...n.com/in/salah-eldin-fikri-1ab233218/",
       facebookUrl:

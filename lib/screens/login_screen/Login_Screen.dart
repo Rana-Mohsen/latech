@@ -1,4 +1,4 @@
-import 'package:final_pro/screens/components/Constant.dart';
+import 'package:final_pro/components/constant.dart';
 import 'package:final_pro/screens/home_layout.dart';
 import 'package:final_pro/screens/register_screen/Register_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,23 +24,37 @@ class _LoginScreenState extends State<LoginScreen> {
   signIn() async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
       var authCredential = userCredential.user;
       print(authCredential!.uid);
       if (authCredential.uid.isNotEmpty) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) =>  const HomeLayout()));
-      }else{
-        Fluttertoast.showToast(msg: "Something is wrong",textColor: Colors.white,fontSize: 20,);
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => const HomeLayout()));
+      } else {
+        Fluttertoast.showToast(
+          msg: "Something is wrong",
+          textColor: Colors.white,
+          fontSize: 20,
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Fluttertoast.showToast(msg: "No user found for that email.",textColor: Colors.white,fontSize: 20,backgroundColor: Colors.black);
+        Fluttertoast.showToast(
+            msg: "No user found for that email.",
+            textColor: Colors.white,
+            fontSize: 20,
+            backgroundColor: Colors.black);
       } else if (e.code == 'wrong-password') {
-        Fluttertoast.showToast(msg: "Wrong password provided for that user.",textColor: Colors.white,fontSize: 20,);
+        Fluttertoast.showToast(
+          msg: "Wrong password provided for that user.",
+          textColor: Colors.white,
+          fontSize: 20,
+        );
       }
     } catch (e) {
       print(e);
@@ -72,7 +86,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.white,
                         ),
                       ),
-
                       const SizedBox(
                         height: 25,
                       ),
@@ -133,20 +146,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8,),
+                          borderRadius: BorderRadius.circular(
+                            8,
+                          ),
                         ),
                         width: double.infinity,
                         child: MaterialButton(
                           onPressed: () {
                             if (formkey.currentState!.validate()) {
                               signIn();
-
                             }
                           },
                           child: const Text(
                             "Validate",
-                            style:
-                                TextStyle(color: Color(0xff0001FC), fontSize: 18),
+                            style: TextStyle(
+                                color: Color(0xff0001FC), fontSize: 18),
                           ),
                         ),
                       ),
@@ -182,7 +196,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-
                       TextButton(
                         onPressed: () {
                           // Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen(),),);

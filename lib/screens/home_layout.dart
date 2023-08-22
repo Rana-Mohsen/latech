@@ -1,10 +1,9 @@
+import 'package:final_pro/components/constant.dart';
 import 'package:final_pro/screens/home.dart';
-import 'package:final_pro/screens/app_info.dart';
 import 'package:final_pro/screens/category.dart';
 import 'package:final_pro/screens/profile.dart';
 import 'package:final_pro/screens/team.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
@@ -16,15 +15,14 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
   List<Widget> pages = [
-    HomeScreen(),
-    CategoryScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const CategoryScreen(),
+    const ProfileScreen(),
     TeamPage()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xfffdfeff),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
@@ -32,10 +30,10 @@ class _HomeLayoutState extends State<HomeLayout> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         unselectedItemColor: Colors.black,
-        selectedItemColor: Color(0xff0001fc),
-        backgroundColor: Color(0xffeff5fb),
+        selectedItemColor: kBackGroundColor,
+        backgroundColor: const Color(0xffeff5fb),
         currentIndex: currentIndex,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined), label: 'home'),
           BottomNavigationBarItem(
