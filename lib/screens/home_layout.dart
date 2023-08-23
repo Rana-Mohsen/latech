@@ -41,7 +41,7 @@ class _HomeLayoutState extends State<HomeLayout> {
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline_rounded), label: 'profile'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.info_outline), label: 'app_info'),
+              icon: Icon(Icons.groups_outlined), label: 'app_info'),
         ],
         onTap: (index) {
           setState(() {});

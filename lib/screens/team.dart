@@ -1,4 +1,5 @@
 import 'package:final_pro/components/constant.dart';
+import 'package:final_pro/screens/about-app.dart';
 import 'package:flutter/material.dart';
 import '../models/team_model.dart';
 import '../widgets/team_card.dart';
@@ -50,10 +51,24 @@ class TeamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            color: kPrimaryTextColor,
+            icon: Icon(Icons.info),
+            iconSize: 28,
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (builder) => AboutApp()));
+            },
+          ),
+          SizedBox(
+            width: 20,
+          ),
+        ],
         title: const Text(
           'Team Members',
           style: TextStyle(
-              fontSize: 30,
+              fontSize: 26,
               fontWeight: FontWeight.bold,
               color: kPrimaryTextColor),
         ),

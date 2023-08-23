@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_pro/screens/category_screen/category.dart';
-import 'package:final_pro/screens/home_layout.dart';
 import 'package:flutter/material.dart';
 
 class LaptopScreen extends StatefulWidget {
@@ -44,27 +43,17 @@ class _LaptopScreenState extends State<LaptopScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeLayout()),
-            );
-          },
-          icon: const Icon(Icons.arrow_back),
-          color: const Color(0xff0A1034),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
@@ -80,7 +69,7 @@ class _LaptopScreenState extends State<LaptopScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 170,
+                    width: width / 2.3,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(10),
@@ -107,8 +96,8 @@ class _LaptopScreenState extends State<LaptopScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 40,
+                  SizedBox(
+                    width: width / 11,
                   ),
                   DropdownButton(
                     hint: const Text("Filters"),
