@@ -207,7 +207,7 @@ class _NewRegisterScreenState extends State<UserFormScreen> {
                         onPressed: () {
                           if (formkey.currentState!.validate()) {
                             sendUserDataToDB();
-                             Navigator.push(
+                             Navigator.pushReplacement(
                                  context,
                                  MaterialPageRoute(
                                     builder: (context) => const HomeLayout()));

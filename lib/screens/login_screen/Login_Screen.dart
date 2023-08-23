@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
       var authCredential = userCredential.user;
       print(authCredential!.uid);
       if (authCredential.uid.isNotEmpty) {
-        Navigator.push(
+        Navigator.pushReplacement(
             context,
             MaterialPageRoute(
                 builder: (BuildContext context) => const HomeLayout()));
@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               )),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RegisterScreen(),

@@ -1,3 +1,4 @@
+import 'package:final_pro/components/constant.dart';
 import 'package:flutter/material.dart';
 import '../models/team_model.dart';
 import '../widgets/team_card.dart';
@@ -10,39 +11,34 @@ class TeamPage extends StatelessWidget {
       name: "SalahEldin Fikri",
       role: "Team Leader",
       bio: "Malware analyzer.",
-      imageUrl: "assets/images/a.jpeg",
+      imageUrl: "assets/images/team/a.jpeg",
       linkedinUrl:
           "https://w...content-available-to-author-only...n.com/in/salah-eldin-fikri-1ab233218/",
-      facebookUrl:
-          "https://www.facebook.com/profile.php?id=100009340171748",
+      facebookUrl: "https://www.facebook.com/profile.php?id=100009340171748",
     ),
     TeamMember(
       name: "Rana Mohsen",
       role: "Member",
       bio: "Flutter developer.",
-      imageUrl: "assets/images/b.jpeg",
-      linkedinUrl:
-          "https://www.linkedin.com/in/rana-mohsen-72937b18b/",
-      facebookUrl:
-          "https://www.facebook.com/profile.php?id=100002546439630",
+      imageUrl: "assets/images/team/b.jpeg",
+      linkedinUrl: "https://www.linkedin.com/in/rana-mohsen-72937b18b/",
+      facebookUrl: "https://www.facebook.com/profile.php?id=100002546439630",
     ),
     TeamMember(
       name: "Malak Ali",
       role: "Member",
       bio: "Flutter developer.",
-      imageUrl: "assets/images/d.jpeg",
-      linkedinUrl:
-      "https://www.linkedin.com/in/malak-elngar-20555b210",
+      imageUrl: "assets/images/team/d.jpeg",
+      linkedinUrl: "https://www.linkedin.com/in/malak-elngar-20555b210",
       facebookUrl:
-      "https://www.facebook.com/profile.php?id=100009459053499&mibextid=D4KYlr",
+          "https://www.facebook.com/profile.php?id=100009459053499&mibextid=D4KYlr",
     ),
     TeamMember(
       name: "Nada Adel",
       role: "Member",
       bio: "Flutter developer.",
-      imageUrl: "assets/images/c.jpeg",
-      linkedinUrl:
-          "https://eg.linkedin.com/in/nada-adel-633899274",
+      imageUrl: "assets/images/team/c.jpeg",
+      linkedinUrl: "https://eg.linkedin.com/in/nada-adel-633899274",
       facebookUrl:
           "https://www.facebook.com/profile.php?id=100012372481567&mibextid=LQQJ4d",
     ),
@@ -54,7 +50,13 @@ class TeamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Team Members'),
+        title: const Text(
+          'Team Members',
+          style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: kPrimaryTextColor),
+        ),
         surfaceTintColor: Colors.transparent,
       ),
       body: ListView.builder(

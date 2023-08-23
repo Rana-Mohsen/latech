@@ -1,6 +1,6 @@
 import 'package:final_pro/components/constant.dart';
+import 'package:final_pro/screens/category_screen/category.dart';
 import 'package:final_pro/screens/home.dart';
-import 'package:final_pro/screens/category.dart';
 import 'package:final_pro/screens/profile.dart';
 import 'package:final_pro/screens/team.dart';
 import 'package:flutter/material.dart';

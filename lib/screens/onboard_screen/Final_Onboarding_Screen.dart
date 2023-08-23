@@ -3,7 +3,6 @@ import 'package:final_pro/screens/login_screen/Login_Screen.dart';
 import 'package:final_pro/screens/register_screen/Register_Screen.dart';
 import 'package:flutter/material.dart';
 
-
 class FinalOnboarding extends StatelessWidget {
   const FinalOnboarding({Key? key}) : super(key: key);
 
@@ -111,33 +110,40 @@ class FinalOnboarding extends StatelessWidget {
                       )),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen(),),);
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Login',
                       style: TextStyle(
-                        color: Color(
-                          0xffFBDF00,),
-                        fontSize: 16
-                      ),
+                          color: Color(
+                            0xffFBDF00,
+                          ),
+                          fontSize: 16),
                     ),
                   ),
                 ],
               ),
-
               const Spacer(flex: 6),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen(),),);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegisterScreen(),
+                    ),
+                  );
                 },
-                child: const Text(
-                    "Skip for now",
+                child: const Text("Skip for now",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
-                    )
-                ),
+                    )),
               ),
               const Spacer(
                 flex: 1,

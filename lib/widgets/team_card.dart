@@ -1,3 +1,4 @@
+import 'package:final_pro/components/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/team_model.dart';
@@ -5,13 +6,13 @@ import '../models/team_model.dart';
 class TeamMemberCard extends StatelessWidget {
   final TeamMember member;
 
-  TeamMemberCard({required this.member});
+  const TeamMemberCard({super.key, required this.member});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       surfaceTintColor: Colors.white,
-      color: const Color(0xffe0ecf8),
+      color: kLightBlue,
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Padding(

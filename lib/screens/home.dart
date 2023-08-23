@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }
           },
           options: CarouselOptions(
-              autoPlay: false,
+              autoPlay: true,
               enlargeCenterPage: true,
               viewportFraction: 0.9,
               aspectRatio: 2.0,

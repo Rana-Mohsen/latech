@@ -8,7 +8,6 @@ class ProfileScreen extends StatefulWidget {
 
   @override
   _ProfileState createState() => _ProfileState();
-
 }
 
 class _ProfileState extends State<ProfileScreen> {
@@ -17,9 +16,7 @@ class _ProfileState extends State<ProfileScreen> {
   TextEditingController? ageController;
 
   setDataToTextField(data) {
-
     return Padding(
-
       padding: const EdgeInsets.symmetric(vertical: 50),
       child: SingleChildScrollView(
         child: Column(
@@ -27,7 +24,9 @@ class _ProfileState extends State<ProfileScreen> {
             Container(
               width: 150,
               height: 150,
-              child: Image.asset('assets/images/person.png',),
+              child: Image.asset(
+                'assets/images/person.png',
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -38,11 +37,9 @@ class _ProfileState extends State<ProfileScreen> {
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.person),
                 labelText: " Name",
-
                 fillColor: Colors.white,
                 filled: true,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
-
               ),
             ),
             const SizedBox(
@@ -56,11 +53,9 @@ class _ProfileState extends State<ProfileScreen> {
                   Icons.phone,
                 ),
                 labelText: " Phone",
-
                 fillColor: Colors.white,
                 filled: true,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
-
               ),
             ),
             const SizedBox(
@@ -74,7 +69,6 @@ class _ProfileState extends State<ProfileScreen> {
                   Icons.support_agent,
                 ),
                 labelText: " Age",
-
                 fillColor: Colors.white,
                 filled: true,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -87,7 +81,7 @@ class _ProfileState extends State<ProfileScreen> {
                 width: 311,
                 height: 53,
                 decoration: BoxDecoration(
-                  color:  Colors.white,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(
                     4,
                   ),
@@ -114,7 +108,7 @@ class _ProfileState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackGroundColor,
+      backgroundColor: kLightBlue,
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(20.0),

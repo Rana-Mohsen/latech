@@ -4,7 +4,6 @@ import 'package:final_pro/screens/onboard_screen/First_onboarding_screen.dart';
 import 'package:final_pro/screens/onboard_screen/size/size_config.dart';
 import 'package:flutter/material.dart';
 
-
 class SplashScreenTwo extends StatefulWidget {
   const SplashScreenTwo({Key? key}) : super(key: key);
 
@@ -13,7 +12,6 @@ class SplashScreenTwo extends StatefulWidget {
 }
 
 class _SplashScreenTwoState extends State<SplashScreenTwo> {
-
   late PageController _controller;
 
   @override
@@ -22,7 +20,6 @@ class _SplashScreenTwoState extends State<SplashScreenTwo> {
     // Timer(const Duration(seconds: 3),()=>Navigator.push(context, CupertinoPageRoute(builder: (_)=>NewRegisterScreen())));
     super.initState();
   }
-
 
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -76,7 +73,12 @@ class _SplashScreenTwoState extends State<SplashScreenTwo> {
                         fontWeight: FontWeight.w600,
                       )),
                   onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>const OnboardingScreen(),),);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OnboardingScreen(),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -85,17 +87,20 @@ class _SplashScreenTwoState extends State<SplashScreenTwo> {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> LoginScreen(),),);
-
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
                 },
-                child: const Text(
-                    "Skip for now",
+                child: const Text("Skip for now",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
-                    )
-                ),),
+                    )),
+              ),
             ],
           ),
         ),

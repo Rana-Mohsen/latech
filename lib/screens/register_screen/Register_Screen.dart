@@ -26,23 +26,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
   signUp() async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
       var authCredential = userCredential.user;
       print(authCredential!.uid);
       if (authCredential.uid.isNotEmpty) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) =>  const UserFormScreen()));
-      }else{
-        Fluttertoast.showToast(msg: "Something is wrong",textColor: Colors.white,fontSize: 20,);
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => const UserFormScreen()));
+      } else {
+        Fluttertoast.showToast(
+          msg: "Something is wrong",
+          textColor: Colors.white,
+          fontSize: 20,
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        Fluttertoast.showToast(msg: "The password provided is too weak.",textColor: Colors.white,fontSize: 20,backgroundColor: Colors.black);
+        Fluttertoast.showToast(
+            msg: "The password provided is too weak.",
+            textColor: Colors.white,
+            fontSize: 20,
+            backgroundColor: Colors.black);
       } else if (e.code == 'email-already-in-use') {
-        Fluttertoast.showToast(msg: "The account already exists for that email.",textColor: Colors.white,fontSize: 20,);
+        Fluttertoast.showToast(
+          msg: "The account already exists for that email.",
+          textColor: Colors.white,
+          fontSize: 20,
+        );
       }
     } catch (e) {
       print(e);
@@ -51,8 +65,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-       backgroundColor: kBackGroundColor,
+    return Scaffold(
+        backgroundColor: kBackGroundColor,
         body: Center(
           child: Form(
             key: formkey,
@@ -73,7 +87,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    const Spacer(flex: 4,),
+                    const Spacer(
+                      flex: 4,
+                    ),
                     TextFormField(
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -83,7 +99,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-
                         fillColor: Colors.white,
                         filled: true,
                         labelText: " Email Address",
@@ -92,10 +107,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         prefixIcon: Icon(
                           Icons.email,
                         ),
-
                       ),
                     ),
-                    const SizedBox(height: 25,),
+                    const SizedBox(
+                      height: 25,
+                    ),
                     TextFormField(
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -105,7 +121,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       controller: passwordController,
                       obscureText: visible,
                       decoration: InputDecoration(
-
                         fillColor: Colors.white,
                         filled: true,
                         labelText: " Password",
@@ -115,17 +130,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Icons.email,
                         ),
                         suffixIcon: IconButton(
-                          icon:visible?const Icon(Icons.remove_red_eye):const Icon(Icons.visibility_off) ,
-                          onPressed: (){
+                          icon: visible
+                              ? const Icon(Icons.remove_red_eye)
+                              : const Icon(Icons.visibility_off),
+                          onPressed: () {
                             setState(() {
-                              visible=!visible;
+                              visible = !visible;
                             });
                           },
                         ),
-
                       ),
                     ),
-                    const SizedBox(height: 35,),
+                    const SizedBox(
+                      height: 35,
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -136,15 +154,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: double.infinity,
                       child: MaterialButton(
                         onPressed: () {
-
                           if (formkey.currentState!.validate()) {
-
-                             signUp();
+                            signUp();
                           }
                         },
                         child: const Text(
                           "Validate",
-                          style: TextStyle(color: Color(0xff0001FC),fontSize: 18),
+                          style:
+                              TextStyle(color: Color(0xff0001FC), fontSize: 18),
                         ),
                       ),
                     ),
@@ -165,15 +182,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             )),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen(),),);
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginScreen(),
+                              ),
+                            );
                           },
                           child: const Text(
                             'Login',
                             style: TextStyle(
                                 color: Color(
-                                  0xffFBDF00,),
-                                fontSize: 16
-                            ),
+                                  0xffFBDF00,
+                                ),
+                                fontSize: 16),
                           ),
                         ),
                       ],
@@ -183,14 +205,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: () {
                         // Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen(),),);
                       },
-                      child: const Text(
-                          "Skip for now",
+                      child: const Text("Skip for now",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
-                          )
-                      ),
+                          )),
                     ),
                   ],
                 ),

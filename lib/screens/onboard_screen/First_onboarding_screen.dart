@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'package:final_pro/components/constant.dart';
 import 'package:final_pro/screens/onboard_screen/Final_Onboarding_Screen.dart';
@@ -40,7 +39,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         borderRadius: BorderRadius.all(
           Radius.circular(50),
         ),
-        color:Colors.white,
+        color: Colors.white,
       ),
       margin: const EdgeInsets.only(right: 5),
       height: 10,
@@ -66,7 +65,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: PageView.builder(
                   physics: const BouncingScrollPhysics(),
                   controller: _controller,
-                  onPageChanged: (value) => setState(() => _currentPage = value),
+                  onPageChanged: (value) =>
+                      setState(() => _currentPage = value),
                   itemCount: contents.length,
                   itemBuilder: (context, i) {
                     return Padding(
@@ -94,7 +94,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                           ),
                           const SizedBox(height: 15),
-
                         ],
                       ),
                     );
@@ -115,63 +114,76 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                    _currentPage + 1 == contents.length
-                        ? Padding(
-                            padding: const EdgeInsets.all(30),
-                            child: ElevatedButton(
+                    // _currentPage + 1 == contents.length
+                    //     ? Padding(
+                    //         padding: const EdgeInsets.all(30),
+                    //         child: ElevatedButton(
 
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=> const FinalOnboarding(),),);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: kBackGroundColor,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                padding: (width <= 550)
-                                    ? const EdgeInsets.symmetric(
-                                        horizontal: 100, vertical: 20)
-                                    : EdgeInsets.symmetric(
-                                        horizontal: width * 0.2, vertical: 25),
-                                textStyle:
-                                    TextStyle(fontSize: (width <= 550) ? 13 : 17),
-                              ),
-                              child: const Text(" Next",style: TextStyle(fontSize: 18,color: Colors.black),),
-                            ),
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.all(30),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-
-                                ElevatedButton(
-                                  onPressed: () {
-                                    _controller.nextPage(
-                                      duration: const Duration(milliseconds: 200),
-                                      curve: Curves.easeIn,
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor:  kBackGroundColor,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                    elevation: 0,
-                                    padding: (width <= 550)
-                                        ? const EdgeInsets.symmetric(
-                                            horizontal: 30, vertical: 20)
-                                        : const EdgeInsets.symmetric(
-                                            horizontal: 30, vertical: 25),
-                                    textStyle: TextStyle(
-                                        fontSize: (width <= 550) ? 13 : 17),
+                    //           onPressed: () {
+                    //             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const FinalOnboarding(),),);
+                    //           },
+                    //           style: ElevatedButton.styleFrom(
+                    //             backgroundColor: kBackGroundColor,
+                    //             elevation: 0,
+                    //             shape: RoundedRectangleBorder(
+                    //               borderRadius: BorderRadius.circular(50),
+                    //             ),
+                    //             padding: (width <= 550)
+                    //                 ? const EdgeInsets.symmetric(
+                    //                     horizontal: 100, vertical: 20)
+                    //                 : EdgeInsets.symmetric(
+                    //                     horizontal: width * 0.2, vertical: 25),
+                    //             textStyle:
+                    //                 TextStyle(fontSize: (width <= 550) ? 13 : 17),
+                    //           ),
+                    //           child: const Text(" Next",style: TextStyle(fontSize: 18,color: Colors.black),),
+                    //         ),
+                    //       )
+                    //:
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              if (_currentPage + 1 == contents.length) {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const FinalOnboarding(),
                                   ),
-                                  child: const Text("NEXT",style: TextStyle(color: Colors.black,fontSize: 18),),
-                                ),
-                              ],
+                                );
+                              }
+                              _controller.nextPage(
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: kBackGroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              elevation: 0,
+                              padding: (width <= 550)
+                                  ? const EdgeInsets.symmetric(
+                                      horizontal: 30, vertical: 20)
+                                  : const EdgeInsets.symmetric(
+                                      horizontal: 30, vertical: 25),
+                              textStyle:
+                                  TextStyle(fontSize: (width <= 550) ? 13 : 17),
                             ),
-                          )
+                            child: const Text(
+                              "NEXT",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
